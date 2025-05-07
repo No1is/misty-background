@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Misty Background</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    body {
+      background: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mist-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(ellipse at bottom, #cfd8dc 0%, #ffffff 100%);
+      overflow: hidden;
+    }
+
+    .mist {
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/foggy-birds.png');
+      animation: moveMist 60s linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes moveMist {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50%); }
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-family: sans-serif;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="mist-container">
+    <div class="mist"></div>
+  </div>
+  <div class="content">
+    <h1>Welcome</h1>
+    <p>Your content goes here</p>
+  </div>
+</body>
+</html>
